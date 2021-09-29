@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Car</title>
+</head>
+<body>
+    <h1>Make a new Car</h1>
+
+    <form action="/cars/create" method="POST">
+
+        <label for="color">Color: </label>
+        <input type="text" name="color">
+        
+        <label for="year">Year: </label>
+        <input type="text" name="year">
+        
+        <input type="hidden" name="maker_id" value="1">        
+
+        <input type="submit" value="Create Car">
+    </form>
+
+</body>
+</html>
