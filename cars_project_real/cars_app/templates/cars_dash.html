@@ -9,14 +9,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to the Cars Website, User!</h1>
+        <h1>Welcome to the Cars Website, {{user.first_name}}!</h1>
         <a href="/cars/new">Create a Car</a>
+        <a href="/logout" class="btn btn-warning">Logout</a>
 
         <table class="table table-success">
             <thead>
                 <th>ID</th>
                 <th>Color</th>
                 <th>Year</th>
+                <th>Action</th>
             </thead>
             <tbody>
                 {% for car in cars %}
@@ -24,6 +26,11 @@
                     <td>{{car.id}}</td>
                     <td>{{car.color}}</td>
                     <td>{{car.year}}</td>
+                    <td>
+                        <a href="/cars/{{car.id}}">View</a> | 
+                        <a href="/cars/{{car.id}}/edit">Edit</a> | 
+                        <a href="/cars/{{car.id}}/destroy">Delete</a> 
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
